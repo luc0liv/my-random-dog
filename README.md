@@ -8,6 +8,9 @@
 - Javascript
 - CSS
 
+## Deploy
+https://my-random-dog.vercel.app/
+
 ## Como rodar a aplicação
 
 ### No terminal, clone o projeto

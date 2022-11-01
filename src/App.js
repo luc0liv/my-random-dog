@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import { FireworkSpinner } from 'react-spinners-kit';
 import './App.css';
 
 class App extends React.Component {
@@ -44,7 +45,11 @@ class App extends React.Component {
 
   render() {
     const { imageUrl, loading } = this.state;
-    const loadingElement = <p>Loading...</p>;
+    const loadingElement = (<FireworkSpinner
+      size={ 120 }
+      color="#175485"
+      loading={ loading }
+    />);
     return (
       <div className="main-container">
         <h1>Doguinho aleatório</h1>

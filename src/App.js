@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import './App.css';
 
 class App extends React.Component {
@@ -28,7 +29,7 @@ class App extends React.Component {
     const { imageUrl } = this.state;
     localStorage.setItem('imageUrl', imageUrl);
     const dogBreed = imageUrl.split('/');
-    alert(dogBreed[4]);
+    Swal.fire(dogBreed[4]);
   }
 
   fetchDog = async () => {

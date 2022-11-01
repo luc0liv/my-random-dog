@@ -8,7 +8,15 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchDog();
+    const dogOnLocalStorage = localStorage.getItem('imageUrl');
+    if (dogOnLocalStorage) {
+      this.setState({
+        imageUrl: dogOnLocalStorage,
+        loading: false,
+      });
+    } else {
+      this.fetchDog();
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {

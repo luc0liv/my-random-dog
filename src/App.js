@@ -45,7 +45,7 @@ class App extends React.Component {
     const { imageUrl, loading } = this.state;
     const loadingElement = <p>Loading...</p>;
     return (
-      <div>
+      <div className="main-container">
         <h1>Doguinho aleatório</h1>
         { loading
           ? loadingElement

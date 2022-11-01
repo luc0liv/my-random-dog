@@ -11,13 +11,16 @@ class App extends React.Component {
     this.fetchDog();
   }
 
-  shouldComponentUpdate(/* nextProps, nextState */) {
-    // Implemente sua lógica aqui
-    return true;
+  shouldComponentUpdate(nextProps, nextState) {
+    const terrier = nextState.imageUrl.includes('terrier');
+    return !terrier;
   }
 
   componentDidUpdate() {
-    // Implemente sua lógica aqui
+    const { imageUrl } = this.state;
+    localStorage.setItem('imageUrl', imageUrl);
+    const dogBreed = imageUrl.split('/');
+    alert(dogBreed[4]);
   }
 
   fetchDog = async () => {

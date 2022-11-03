@@ -9,7 +9,7 @@
 - CSS
 
 ## Deploy
-<a href="https://my-random-dog.vercel.app/" target="_blank">Vercel</a>
+<a href="https://my-random-dog.vercel.app/" target="_blank" rel="noopener noreferrer">Vercel</a>
 
 ## Como rodar a aplicação
 

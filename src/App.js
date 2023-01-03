@@ -1,16 +1,16 @@
-import React from "react";
-import Swal from "sweetalert2";
-import { FireworkSpinner } from "react-spinners-kit";
-import "./App.css";
+import React from 'react';
+import Swal from 'sweetalert2';
+import { FireworkSpinner } from 'react-spinners-kit';
+import './App.css';
 
 class App extends React.Component {
   state = {
-    imageUrl: "",
+    imageUrl: '',
     loading: true,
   };
 
   componentDidMount() {
-    const dogOnLocalStorage = localStorage.getItem("imageUrl");
+    const dogOnLocalStorage = localStorage.getItem('imageUrl');
     if (dogOnLocalStorage) {
       this.setState({
         imageUrl: dogOnLocalStorage,
@@ -22,19 +22,19 @@ class App extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const terrier = nextState.imageUrl.includes("terrier");
+    const terrier = nextState.imageUrl.includes('terrier');
     return !terrier;
   }
 
   componentDidUpdate() {
     const { imageUrl } = this.state;
-    localStorage.setItem("imageUrl", imageUrl);
-    const dogBreed = imageUrl.split("/");
+    localStorage.setItem('imageUrl', imageUrl);
+    const dogBreed = imageUrl.split('/');
     Swal.fire(dogBreed[4]);
   }
 
   fetchDog = async () => {
-    const url = "https://dog.ceo/api/breeds/image/random";
+    const url = 'https://dog.ceo/api/breeds/image/random';
     const request = await fetch(url);
     const response = await request.json();
     this.setState({
@@ -46,7 +46,7 @@ class App extends React.Component {
   render() {
     const { imageUrl, loading } = this.state;
     const loadingElement = (
-      <FireworkSpinner size={120} color="#175485" loading={loading} />
+      <FireworkSpinner size={ 120 } color="#175485" loading={ loading } />
     );
     return (
       <div className="main-container">
@@ -54,9 +54,9 @@ class App extends React.Component {
         {loading ? (
           loadingElement
         ) : (
-          <img src={imageUrl} alt="Doguinho aleatório" width={400} />
+          <img src={ imageUrl } alt="Doguinho aleatório" width={ 400 } />
         )}
-        <button type="button" onClick={this.fetchDog}>
+        <button type="button" onClick={ this.fetchDog }>
           Novo doguinho!
         </button>
       </div>

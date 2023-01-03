@@ -3,6 +3,7 @@
 #### Práticas abordadas no exercício:
 - Ciclo de Vida do Componente
 - Requisição de API com React
+
 ## Tecnologias utilizadas
 - ReactJs
 - Javascript

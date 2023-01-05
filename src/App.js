@@ -54,7 +54,7 @@ class App extends React.Component {
         {loading ? (
           loadingElement
         ) : (
-          <img src={ imageUrl } alt="Doguinho aleatório" width={ 400 } />
+          <><img src={imageUrl} alt="Doguinho aleatório" width={400} /><p>{imageUrl}</p></>
         )}
         <button type="button" onClick={ this.fetchDog }>
           Novo doguinho!
